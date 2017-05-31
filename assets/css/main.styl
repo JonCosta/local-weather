@@ -1,0 +1,38 @@
+$opacity = 0.8
+
+$bg-color = rgba(12, 170, 220, $opacity)
+$footer-color = rgba(0, 0, 0, $opacity);
+$bg-img = url("../img/bg-default.jpg")
+
+
+body {
+    background-color: $bg-color
+    background-image: $bg-img
+}
+
+.jumbo {
+    background-color: $bg-color
+    margin-top: 50px
+    padding-top: 10px
+    box-shadow: 5px 5px 10px
+}
+
+.jumbo__title {
+    text-align: center
+}
+
+.myFooter {
+    background-color: $footer-color
+    bottom: 0
+    left: 0
+    line-height: 50px
+    padding: 0 20px
+    position: absolute
+    width: 100%
+
+    p {
+        color: #fff
+        font-weight: bold
+        text-align: center
+    }
+}
