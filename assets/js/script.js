@@ -3,7 +3,7 @@ $(function() {
     $(".btnGetWeather").click(function(event) {
         // event.preventDefault();
         getLocation();
-        $("body").css("background-image", 'url("./assets/img/bg-sunny.jpg")');
+        $("body").css("background-image", 'url("https://s6.postimg.org/xupiuz03j/bg_rainy.jpg")');
     });
     
     function getLocation() {

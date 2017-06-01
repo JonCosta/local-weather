@@ -1,6 +1,8 @@
 body {
   background-color: rgba(12,170,220,0.8);
-  background-image: url("../img/bg-default.jpg");
+  background-image: url("https://s6.postimg.org/x3wsp6xq9/bg_default.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .jumbo {
   background-color: rgba(12,170,220,0.8);
@@ -8,7 +10,9 @@ body {
   padding-top: 10px;
   box-shadow: 5px 5px 10px;
 }
-.jumbo__title {
+.jumbo .jumbo__title {
+  color: #fff;
+  font-family: 'Lobster', cursive;
   text-align: center;
 }
 .myFooter {

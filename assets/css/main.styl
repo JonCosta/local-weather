@@ -1,13 +1,20 @@
 $opacity = 0.8
 
 $bg-color = rgba(12, 170, 220, $opacity)
-$footer-color = rgba(0, 0, 0, $opacity);
-$bg-img = url("../img/bg-default.jpg")
+$footer-color = rgba(0, 0, 0, $opacity)
+
+$img-sunny = url("https://s6.postimg.org/442e97f41/bg_sunny.jpg")
+$img-snowy = url("https://s6.postimg.org/82zls13r5/bg_snowy.jpg")
+$img-rainy = url("https://s6.postimg.org/s6j842vr5/bg_rainy.jpg")
+$img-clear = url("https://s6.postimg.org/fcl6aqibl/bg_clear.jpg")
+$img-default = url("https://s6.postimg.org/x3wsp6xq9/bg_default.jpg")
 
 
 body {
     background-color: $bg-color
-    background-image: $bg-img
+    background-image: $img-default
+    background-size: cover
+    background-repeat: no-repeat
 }
 
 .jumbo {
@@ -15,11 +22,14 @@ body {
     margin-top: 50px
     padding-top: 10px
     box-shadow: 5px 5px 10px
+
+    .jumbo__title {
+        color: #ffffff
+        font-family: 'Lobster', cursive
+        text-align: center
+    }
 }
 
-.jumbo__title {
-    text-align: center
-}
 
 .myFooter {
     background-color: $footer-color
