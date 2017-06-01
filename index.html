@@ -14,13 +14,22 @@
     <div class="container">
         <div class="jumbotron jumbo">
             <h1 class="jumbo__title">Your Local Weather</h1>
-            <h2 class="txtTemp"></h2>
-            <button class="btn btn-primary btnGetWeather">Get my weather!</button>
+            <div class="weather">
+                <ul>
+                    <li>Weather: <span class="weather__main"></span></li>
+                    <li>Temperature: <span class="weather__temperature"></span></li>
+                    <li>Location: <span class="weather__local"></span></li>
+                    <li>Humidity: <span class="weather__humidity"></span></li>
+                    <li>Wind: <span class="weather__wind"></span></li>
+                </ul>
+                <button class="btn btn-warning weather__button">Change to F</button>
+            </div>
+            <button class="btn btn-primary jumbo__button">Get my weather!</button>
         </div>
     </div>
 
     <footer class="myFooter">
-        <p>Coded by Jonathan Costa - 2017</p>
+        <p class="myFooter__text">Coded by Jonathan Costa - 2017</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
