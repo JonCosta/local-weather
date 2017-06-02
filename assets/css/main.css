@@ -11,15 +11,31 @@ body {
   box-shadow: 5px 5px 10px;
 }
 .jumbo .jumbo__title {
-  color: #fff;
+  color: #feffea;
   font-family: 'Lobster', cursive;
   text-align: center;
 }
+.jumbo .jumbo__wrap {
+  text-align: center;
+}
+.jumbo .jumbo__group {
+  margin: 0 auto;
+  text-align: center;
+  width: inherit;
+  display: inline-block;
+}
+.jumbo .jumbo__button {
+  background-color: #e6af2e;
+  color: #feffea;
+  margin-top: 50px;
+}
 .weather {
+  color: #feffea;
   display: none;
+  margin-top: 50px;
 }
 .myFooter {
-  background-color: rgba(0,0,0,0.8);
+  background-color: #331832;
   bottom: 0;
   left: 0;
   line-height: 50px;
@@ -28,7 +44,7 @@ body {
   width: 100%;
 }
 .myFooter .myFooter__text {
-  color: #fff;
+  color: #feffea;
   font-weight: bold;
   text-align: center;
 }

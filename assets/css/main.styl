@@ -1,7 +1,9 @@
 $opacity = 0.8
 
 $bg-color = rgba(12, 170, 220, $opacity)
-$footer-color = rgba(0, 0, 0, $opacity)
+$button-color = #e6af2e
+$font-color = #feffea
+$footer-color = #331832
 
 $img-sunny = url("https://s6.postimg.org/442e97f41/bg_sunny.jpg")
 $img-snowy = url("https://s6.postimg.org/82zls13r5/bg_snowy.jpg")
@@ -24,18 +26,33 @@ body {
     box-shadow: 5px 5px 10px
 
     .jumbo__title {
-        color: #ffffff
+        color: $font-color
         font-family: 'Lobster', cursive
         text-align: center
     }
 
+    .jumbo__wrap {
+        text-align: center
+    }
+
+    .jumbo__group {
+        margin: 0 auto
+        text-align: center
+        width: inherit
+        display: inline-block
+    }
+
     .jumbo__button {
-        
+        background-color: $button-color
+        color: $font-color
+        margin-top: 50px
     }
 }
 
 .weather {
-    display: none;
+    color: $font-color
+    display: none
+    margin-top: 50px
 }
 
 
@@ -49,7 +66,7 @@ body {
     width: 100%
 
     .myFooter__text {
-        color: #fff
+        color: $font-color
         font-weight: bold
         text-align: center
     }

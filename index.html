@@ -7,6 +7,7 @@
     <title>Local Weather</title>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
@@ -15,8 +16,13 @@
         <div class="jumbotron jumbo">
             <h1 class="jumbo__title">Your Local Weather</h1>
             <div class="weather">
+                <h2 class="temperature">
+                    <i class="fa fa-cog temperature__icon"></i>
+                    <span class="temperature__val"></span>
+                </h2>
+
                 <ul>
-                    <li>Weather: <span class="weather__main"></span></li>
+                    <!--<li>Weather: <span class="weather__main"></span></li>-->
                     <li>Temperature: <span class="weather__temperature"></span></li>
                     <li>Location: <span class="weather__local"></span></li>
                     <li>Humidity: <span class="weather__humidity"></span></li>
@@ -24,7 +30,11 @@
                 </ul>
                 <button class="btn btn-warning weather__button">Change to F</button>
             </div>
-            <button class="btn btn-primary jumbo__button">Get my weather!</button>
+            <div class="jumbo__wrap">
+                <div class="btn-group jumbo__group">
+                    <button class="btn btn-lg jumbo__button" data-loading-text="<i class='fa fa-cog fa-spin'></i> Searching..." >Get my weather!</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -33,6 +43,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
