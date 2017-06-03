@@ -17,14 +17,13 @@
             <h1 class="jumbo__title">Your Local Weather</h1>
             <div class="weather">
                 <h2 class="temperature">
+                    <canvas id="icon1" width="128" height="128"></canvas>
                     <i class="fa fa-cog temperature__icon"></i>
                     <span class="temperature__val"></span>
                 </h2>
 
                 <ul>
                     <!--<li>Weather: <span class="weather__main"></span></li>-->
-                    <li>Temperature: <span class="weather__temperature"></span></li>
-                    <li>Location: <span class="weather__local"></span></li>
                     <li>Humidity: <span class="weather__humidity"></span></li>
                     <li>Wind: <span class="weather__wind"></span></li>
                 </ul>
@@ -39,11 +38,12 @@
     </div>
 
     <footer class="myFooter">
-        <p class="myFooter__text">Coded by Jonathan Costa - 2017</p>
+        <p class="myFooter__text">Powered by <a href="https://darksky.net/poweredby/">Dark Sky</a>. Coded by Jonathan Costa - 2017</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

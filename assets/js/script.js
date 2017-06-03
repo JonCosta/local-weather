@@ -2,7 +2,7 @@ $(function() {
     
     // Tempreature Object that will hold the value and its metric
     var TEMP = {
-        mode: "C",
+        mode: "F",
         val: 0
     };
 
@@ -38,22 +38,19 @@ $(function() {
 
     // Uses the user's coordinates to send a request to the weather API
     function getWeather(position) {
+        
+        var key = "e9f9dec3547457cf5b5704dc6cb080be";
+
         $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/weather",
-            data: {
-                lat: position.coords.latitude,
-                lon: position.coords.longitude,
-                APPID: "6bcdb2f0785621d3a6c531e0caf57c5a"
-            },
+            url: "https://api.darksky.net/forecast/"+key+"/"+position.coords.latitude+","+position.coords.longitude,
+            dataType: "jsonp",
             success: function(data) {
-                // console.log(data);
-                $(".weather__main").html(data.weather[0].main);
-                $(".weather__local").html(data.name+ " - "+ data.sys.country);
-                // The temperature comes in Kelvin, so we convert to Celsius before showing
-                TEMP.val = Math.round(data.main.temp - 273.15);
-                $(".temperature__val").html(TEMP.val +"° C");
-                $(".weather__wind").html(data.wind.speed);
-                $(".weather__humidity").html(data.main.humidity);
+                console.log(data);
+                // The temperature comes in Fahrenheit, so we convert to Celsius before showing
+                TEMP.val = Math.round(data.currently.temperature);
+                $(".temperature__val").html(TEMP.val +"F");
+                $(".weather__wind").html(data.currently.windSpeed +" Miles/Hour");
+                $(".weather__humidity").html(data.currently.humidity);
                 $(".weather").show();
                 $(".jumbo__button").button('reset');
             },
