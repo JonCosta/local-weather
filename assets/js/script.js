@@ -18,11 +18,11 @@ $(function() {
     $(".weather__button").click(function() {
         if (TEMP.mode == 'C') {
             TEMP.mode = 'F';
-            TEMP.val = (TEMP.val * 9/5) + 32;
+            TEMP.val = Math.round((TEMP.val * 9/5) + 32);
             $(".temperature__val").html(TEMP.val +"F");
         } else {
             TEMP.mode = 'C';
-            TEMP.val = (TEMP.val - 32) * 5/9;
+            TEMP.val = Math.round((TEMP.val - 32) * 5/9);
             $(".temperature__val").html(TEMP.val +"°C");            
         }
     });
@@ -53,12 +53,32 @@ $(function() {
                 $(".weather__humidity").html(data.currently.humidity);
                 $(".weather").show();
                 $(".jumbo__button").button('reset');
+                changeWeatherIcon(data.currently.icon);
             },
             error: function() {
                 console.log("Couldn't find the data.");
             }
         })
         $(".txtTemp").html("Latitude: "+ position.coords.latitude +"<br>Longitude: "+ position.coords.longitude);
+    }
+
+    function changeWeatherIcon(weather) {
+        var skycons = new Skycons({"color": "black"});
+        
+        switch(weather) {
+            case "clear-day":
+            case "clear-night":
+            case "rain":
+            case "snow":
+            case "wind":
+            case "fog":
+            case "cloudy":
+            case "partly-cloudy-day":
+            case "partly-cloudy-night":
+            default:
+                skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
+                skycons.play();
+        }
     }
 
 });
