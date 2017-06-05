@@ -14,15 +14,17 @@ $(function() {
     });
 
     // Toggles the temperature unit between Celius and Fahrenheit
-    $(".weather__button").click(function() {
+    $(".weather__span").click(function() {
         if (TEMP.mode == 'C') {
             TEMP.mode = 'F';
             TEMP.val = Math.round((TEMP.val * 9/5) + 32);
             $(".temperature__val").html(TEMP.val +"F");
+            $(this).html("°C");
         } else {
             TEMP.mode = 'C';
             TEMP.val = Math.round((TEMP.val - 32) * 5/9);
-            $(".temperature__val").html(TEMP.val +"°C");            
+            $(".temperature__val").html(TEMP.val +"°C");
+            $(this).html("F");            
         }
     });
     
@@ -106,4 +108,3 @@ $(function() {
     }
 
 });
-

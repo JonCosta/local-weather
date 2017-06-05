@@ -26,6 +26,7 @@ body {
 .jumbo .jumbo__title {
   color: #feffea;
   font-family: 'Lobster', cursive;
+  font-size: 70px;
   text-align: center;
 }
 .jumbo .jumbo__wrap {
@@ -40,13 +41,19 @@ body {
 .jumbo .jumbo__button {
   background-color: #e6af2e;
   color: #feffea;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 .weather {
   color: #feffea;
   display: none;
   margin-top: 20px;
   text-align: center;
+}
+.weather .weather__span {
+  margin-left: 10px;
+}
+.weather .weather__span:hover {
+  cursor: pointer;
 }
 .temperature #temperature__icon {
   width: 200;
@@ -59,10 +66,11 @@ body {
   background-color: #331832;
   bottom: 0;
   left: 0;
+  padding: 15px 15px;
   width: 100%;
 }
 .myFooter .myFooter__text {
   color: #feffea;
-  font-weight: bold;
   text-align: center;
+  margin: 0 auto;
 }

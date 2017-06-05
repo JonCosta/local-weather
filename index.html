@@ -19,8 +19,8 @@
             <div class="weather">
                 <h2 class="temperature">
                     <canvas id="temperature__icon"></canvas>
-                    <p><span class="temperature__val"></span></p>
-                    <button class="btn btn-warning weather__button">Change Unit</button>
+                    <p><span class="temperature__val"></span> <span class="weather__span">°C</span> </p>
+                    
                 </h2>
 
                 <p>Rain: <span class="weather__rain"></span> </p>
@@ -36,8 +36,10 @@
         </div>
     </div>
 
-    <footer class="navbar navbar-fixed-bottom myFooter">
-        <p class="myFooter__text">Powered by <a href="https://darksky.net/poweredby/">Dark Sky</a>. Coded by Jonathan Costa - 2017</p>
+    <footer class="navbar navbar-fixed-bottom">
+        <div class="myFooter">
+            <p class="myFooter__text">Powered by <a href="https://darksky.net/poweredby/">Dark Sky</a>. Coded by Jonathan Costa - 2017</p>
+        </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
