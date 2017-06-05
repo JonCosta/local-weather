@@ -43,6 +43,10 @@ body {
   color: #feffea;
   margin-top: 30px;
 }
+.jumbo .jumbo__button:hover {
+  background-color: #feffea;
+  color: rgba(12,170,220,0.8);
+}
 .weather {
   color: #feffea;
   display: none;
@@ -51,8 +55,13 @@ body {
 }
 .weather .weather__span {
   margin-left: 10px;
+  background-color: #e6af2e;
+  border-radius: 15px;
+  padding: 5px 10px;
 }
 .weather .weather__span:hover {
+  background-color: #feffea;
+  color: rgba(12,170,220,0.8);
   cursor: pointer;
 }
 .temperature #temperature__icon {

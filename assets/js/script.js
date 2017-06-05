@@ -24,7 +24,7 @@ $(function() {
             TEMP.mode = 'C';
             TEMP.val = Math.round((TEMP.val - 32) * 5/9);
             $(".temperature__val").html(TEMP.val +"°C");
-            $(this).html("F");            
+            $(this).html("F");
         }
     });
     
