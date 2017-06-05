@@ -11,7 +11,6 @@ $(function() {
         var $this = $(this);
         $this.button('loading');
         getLocation();
-        $("body").css("background-image", 'url("https://s6.postimg.org/xupiuz03j/bg_rainy.jpg")');
     });
 
     // Toggles the temperature unit between Celius and Fahrenheit
@@ -45,40 +44,65 @@ $(function() {
             url: "https://api.darksky.net/forecast/"+key+"/"+position.coords.latitude+","+position.coords.longitude,
             dataType: "jsonp",
             success: function(data) {
-                console.log(data);
+                // console.log(data);
                 // The temperature comes in Fahrenheit, so we convert to Celsius before showing
                 TEMP.val = Math.round(data.currently.temperature);
                 $(".temperature__val").html(TEMP.val +"F");
-                $(".weather__wind").html(data.currently.windSpeed +" Miles/Hour");
-                $(".weather__humidity").html(data.currently.humidity);
+                // Set the other weather values
+                $(".weather__rain").html(data.currently.precipProbability * 100 +"%");
+                $(".weather__wind").html(data.currently.windSpeed +" mi/h");
+                $(".weather__humidity").html(data.currently.humidity * 100 +"%");
+                // Change the background to match the weather
+                changeWeatherBackground(data.currently.icon);
+                // Initiate the Skycons lib to generate the weather icon
+                var skycons = new Skycons({"color": "white"});
+                skycons.add("temperature__icon", data.currently.icon);
+                skycons.play();
+                // Remove the height:100% attribute so the background can match
+                $("html, body").removeClass("total-height");
                 $(".weather").show();
-                $(".jumbo__button").button('reset');
-                changeWeatherIcon(data.currently.icon);
+                $(".jumbo__button").button('reset');        
             },
             error: function() {
                 console.log("Couldn't find the data.");
+                $(".jumbo__button").button('reset');        
             }
-        })
-        $(".txtTemp").html("Latitude: "+ position.coords.latitude +"<br>Longitude: "+ position.coords.longitude);
+        });
     }
 
-    function changeWeatherIcon(weather) {
-        var skycons = new Skycons({"color": "black"});
+    // 
+    function changeWeatherBackground(weather) {
         
         switch(weather) {
             case "clear-day":
+                var bgUrl = "url(https://s6.postimg.org/fcl6aqibl/bg_clear.jpg)";
+                break;
             case "clear-night":
+                var bgUrl = "url(https://s6.postimg.org/w2oabbzup/bg-clear-night.jpg)";
+                break;
             case "rain":
+                var bgUrl = "url(https://s6.postimg.org/s6j842vr5/bg_rainy.jpg)";
+                break;
             case "snow":
+                var bgUrl = "url(https://s6.postimg.org/82zls13r5/bg_snowy.jpg)";
+                break;
             case "wind":
+                var bgUrl = "url(https://s6.postimg.org/dqxmu6r7l/bg-wind.jpg)";
+                break;
             case "fog":
+                var bgUrl = "url(https://s6.postimg.org/r6knjmzpd/bg-fog.jpg)";
+                break;
             case "cloudy":
+                var bgUrl = "url(https://s6.postimg.org/p0qcp4w8x/bg-cloud.jpg)";
+                break;
             case "partly-cloudy-day":
             case "partly-cloudy-night":
+                var bgUrl = "url(https://s6.postimg.org/xmtm9q88x/bg-partly-cloud.jpg)";
+                break;
             default:
-                skycons.add("icon1", Skycons.PARTLY_CLOUDY_DAY);
-                skycons.play();
+                var bgUrl = "url(https://s6.postimg.org/x3wsp6xq9/bg_default.jpg)";
         }
+        $("body").css("background-image", bgUrl);
     }
 
 });

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="total-height">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,24 +10,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
 </head>
-<body>
+<body class="total-height">
     
     <div class="container">
         <div class="jumbotron jumbo">
             <h1 class="jumbo__title">Your Local Weather</h1>
+
             <div class="weather">
                 <h2 class="temperature">
-                    <canvas id="icon1" width="128" height="128"></canvas>
-                    <i class="fa fa-cog temperature__icon"></i>
-                    <span class="temperature__val"></span>
+                    <canvas id="temperature__icon"></canvas>
+                    <p><span class="temperature__val"></span></p>
+                    <button class="btn btn-warning weather__button">Change Unit</button>
                 </h2>
 
-                <ul>
-                    <!--<li>Weather: <span class="weather__main"></span></li>-->
-                    <li>Humidity: <span class="weather__humidity"></span></li>
-                    <li>Wind: <span class="weather__wind"></span></li>
-                </ul>
-                <button class="btn btn-warning weather__button">Change Unit</button>
+                <p>Rain: <span class="weather__rain"></span> </p>
+                <p>Humidity: <span class="weather__humidity"></span> </p>
+                <p>Wind: <span class="weather__wind"></span> </p>
+                
             </div>
             <div class="jumbo__wrap">
                 <div class="btn-group jumbo__group">
@@ -37,7 +36,7 @@
         </div>
     </div>
 
-    <footer class="myFooter">
+    <footer class="navbar navbar-fixed-bottom myFooter">
         <p class="myFooter__text">Powered by <a href="https://darksky.net/poweredby/">Dark Sky</a>. Coded by Jonathan Costa - 2017</p>
     </footer>
 

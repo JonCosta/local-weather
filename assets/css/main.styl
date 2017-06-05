@@ -5,25 +5,33 @@ $button-color = #e6af2e
 $font-color = #feffea
 $footer-color = #331832
 
-$img-sunny = url("https://s6.postimg.org/442e97f41/bg_sunny.jpg")
-$img-snowy = url("https://s6.postimg.org/82zls13r5/bg_snowy.jpg")
-$img-rainy = url("https://s6.postimg.org/s6j842vr5/bg_rainy.jpg")
-$img-clear = url("https://s6.postimg.org/fcl6aqibl/bg_clear.jpg")
 $img-default = url("https://s6.postimg.org/x3wsp6xq9/bg_default.jpg")
 
+.total-height {
+    height: 100%
+}
 
 body {
     background-color: $bg-color
     background-image: $img-default
     background-size: cover
     background-repeat: no-repeat
+    background-position: center center
 }
 
 .jumbo {
     background-color: $bg-color
-    margin-top: 50px
-    padding-top: 10px
     box-shadow: 5px 5px 10px
+    margin-bottom: 100px
+    margin-top: 50px
+    margin-left: auto
+    margin-right: auto
+    padding-top: 10px
+    width: 60%
+
+    @media screen and (max-width: 480px) {
+        width: 90%
+    }
 
     .jumbo__title {
         color: $font-color
@@ -52,17 +60,25 @@ body {
 .weather {
     color: $font-color
     display: none
-    margin-top: 50px
+    margin-top: 20px
+    text-align: center
 }
 
+.temperature {
+    #temperature__icon {
+        width: 200
+        height: 200
+    }
+
+    .temperature__val {
+        font-size: 50px
+    }
+}
 
 .myFooter {
     background-color: $footer-color
     bottom: 0
     left: 0
-    line-height: 50px
-    padding: 0 20px
-    position: absolute
     width: 100%
 
     .myFooter__text {
